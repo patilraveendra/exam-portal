@@ -23,6 +23,22 @@
       "optionB": "punjab",
       "optionC": "kashmir",
       "optionD": "pakistan"
+    },
+    {
+      "id": "4",
+      "question": "which is the best state",
+      "optionA": "maharastra",
+      "optionB": "gujrat",
+      "optionC": "tamil nadu",
+      "optionD": "bengal"
+    },
+    {
+      "id": "5",
+      "question": "which is the best cricketer",
+      "optionA": "M S dhoni",
+      "optionB": "sachin tendulkar",
+      "optionC": "dinesh karthik",
+      "optionD": "virat kohli"
     }
   ]
 }
