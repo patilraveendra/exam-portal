@@ -15,6 +15,7 @@ export class QuestionAnswerComponent implements OnInit {
   currentQuestion: Questions;
   currentIndex: number;
   selectedAnswer: string;
+  isNew: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -28,25 +29,29 @@ export class QuestionAnswerComponent implements OnInit {
 
   getQuestionData(examId: string) {
 
-    console.log('hard coded');
-    this.questionSet = JSON.parse(JSON.stringify(questions));
-    this.currentQuestion = this.questionSet[0];
-    this.currentIndex = 0;
+    // console.log('hard coded');
+    // this.questionSet = JSON.parse(JSON.stringify(questions));
+    // this.currentQuestion = this.questionSet[0];
+    // this.currentIndex = 0;
 
-    // this.examservice.getExamQuestions(examId).subscribe(
-    //   (questions: Questions[]) => {
-    //     this.questionSet = questions;
-    //     this.currentQuestion = questions[0];
-    //     this.currentIndex = 0;
-    //     console.log('questions');
-    //     console.log(this.questions);
-    //   });
+    this.examservice.getExamQuestions(examId).subscribe(
+      (questions: Questions[]) => {
+        this.questionSet = questions;
+        this.currentQuestion = questions[0];
+        this.currentIndex = 0;
+        this.isNew=true;
+        console.log('questions');
+        console.log(this.questionSet);
+      });
   }
 
   onNext() {
+    console.log('selected answer');
+    console.log(this.selectedAnswer);
     if (this.currentIndex <= this.questionSet.length) {
       this.currentIndex = this.currentIndex + 1;
       this.currentQuestion = this.questionSet[this.currentIndex];
+      this.selectedAnswer=null;
     }
   }
 
