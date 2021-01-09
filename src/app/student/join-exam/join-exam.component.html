@@ -1,0 +1,26 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>Join</h1>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Exam Id" formControlName="examId" required>
+          <mat-error *ngIf="isFieldInvalid('examId')">
+            Please enter your exam id.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Your Name" formControlName="name" required>
+          <mat-error *ngIf="isFieldInvalid('name')">
+            Please enter your name.
+          </mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <button mat-raised-button color="primary" type="submit">Join Exam</button>
+          <button mat-raised-button color="warning" type="submit">Cancel</button>
+        </div>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>

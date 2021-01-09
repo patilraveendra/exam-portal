@@ -1,0 +1,37 @@
+<div class="signin-content">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div *ngIf="questions">
+                {{questions | json}}
+                    <div *ngIf="currentQuestion && currentIndex <=questions.length">
+                        <h1>{{currentQuestion.question}}</h1>
+
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                            <mat-radio-button class="example-radio-button" [value]="1">
+                                {{currentQuestion.optionA}}
+                            </mat-radio-button>
+
+                            <mat-radio-button class="example-radio-button" [value]="2">
+                                {{currentQuestion.optionB}}
+                            </mat-radio-button>
+
+                            <mat-radio-button class="example-radio-button" [value]="3">
+                                {{currentQuestion.optionC}}
+                            </mat-radio-button>
+
+                            <mat-radio-button class="example-radio-button" [value]="4">
+                                {{currentQuestion.optionD}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <button mat-raised-button color="primary" (click)="onNext()">Next Question</button>
+                            <button mat-raised-button color="warning" type="submit">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

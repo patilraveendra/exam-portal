@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "which is/was the best bike",
+      "optionA": "KTM",
+      "optionB": "pulsar",
+      "optionC": "ninja",
+      "optionD": "honda"
+    },
+    {
+      "id": "2",
+      "question": "which is the best car",
+      "optionA": "maruti",
+      "optionB": "honda",
+      "optionC": "hyjndai",
+      "optionD": "mahindra"
+    },
+    {
+      "id": "3",
+      "question": "which is the best place",
+      "optionA": "dellhi",
+      "optionB": "punjab",
+      "optionC": "kashmir",
+      "optionD": "pakistan"
+    }
+  ]
+}

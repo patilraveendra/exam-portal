@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <span>
+   Exam Portal
+  </span>
+  <span class="fill-remaining-space"></span>
+
+
+  <a mat-button routerLink="/join-exam">Join Exam</a>
+  <a mat-button routerLink="/add-report">See Report</a>
+
+  <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
+</mat-toolbar>
