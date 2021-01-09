@@ -16,13 +16,25 @@ export class AuthguardServiceService {
 
   constructor(
     private router: Router
-  ) {}
+  ) { }
 
   login(user: User) {
-    if (user.userName !== '' && user.password !== '' ) {
+    if (user.userName !== '' && user.password !== '') {
       this.loggedIn.next(true);
-      localStorage.setItem('studentid', 'x5642jjjf');
-      console.log('login service');
+      if (user.userName === 'student' && user.password === 'student') {
+        localStorage.setItem('studentid', '35');
+        localStorage.setItem('role', 'student');
+        localStorage.setItem('loggedIn', 'true');
+        console.log('login service');
+      }
+
+      if (user.userName === 'teacher' && user.password === 'teacher') {
+        localStorage.setItem('teacherid', '85');
+        localStorage.setItem('role', 'teacher');
+        localStorage.setItem('loggedIn', 'true');
+        console.log('login service');
+      }
+
       this.router.navigate(['/']);
     }
   }

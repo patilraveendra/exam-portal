@@ -44,6 +44,7 @@ export class QuestionAnswerComponent implements OnInit {
   }
 
   onNext() {
+    this.selectedAnswer=null;
     if (this.currentIndex <= this.questionSet.length) {
       this.currentIndex = this.currentIndex + 1;
       this.currentQuestion = this.questionSet[this.currentIndex];
