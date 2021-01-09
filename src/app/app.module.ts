@@ -17,7 +17,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JoinExamComponent } from './student/join-exam/join-exam.component';
 import { JoinExamPasswordComponent } from './student/join-exam-password/join-exam-password.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -53,8 +53,8 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatButtonModule,
     HttpClientModule,
-    MatRadioModule
-
+    MatRadioModule,
+    FormsModule,
   ],
   providers: [
     AuthguardServiceService

@@ -60,8 +60,6 @@ export class ExamService {
   private _jsonURL = '../jsondata/question.json';
 
   getExamQuestions(examId: string): Observable<any[]> {
-    console.log('starting get exam service');
-    return this.http.get<Questions[]>(this._jsonURL);
-    // return this.http.get<Questions[]>('https://localhost:44390/api/exam/question/1');
+     return this.http.get<Questions[]>('https://localhost:44390/api/exam/question/1');
   }
 }
