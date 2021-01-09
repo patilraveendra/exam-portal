@@ -9,7 +9,7 @@
     <a mat-button routerLink="/add-report">See Report</a>
   </div>
   <div *ngIf="isTeacher$ | async as isTeacher">
-    <a mat-button routerLink="/join-exam">Create Exam</a>
+    <a mat-button routerLink="/add-exam">Create Exam</a>
   </div>
   <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
 </mat-toolbar>

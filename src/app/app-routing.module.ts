@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { JoinExamPasswordComponent } from './student/join-exam-password/join-exam-password.component';
 import { JoinExamComponent } from './student/join-exam/join-exam.component';
 import { QuestionAnswerComponent } from './student/question-answer/question-answer.component';
+import { AddExamQuestionsListComponent } from './teacher/add-exam-questions-list/add-exam-questions-list.component';
+import { AddExamQuestionsComponent } from './teacher/add-exam-questions/add-exam-questions.component';
+import { AddExamComponent } from './teacher/add-exam/add-exam.component';
 
 
 const routes: Routes = [
@@ -15,6 +18,10 @@ const routes: Routes = [
   { path: 'join-exam', component: JoinExamComponent },
   { path: 'join-exam-password', component: JoinExamPasswordComponent },
   { path: 'exam-question-answer', component: QuestionAnswerComponent },
+  { path: 'add-exam', component: AddExamComponent },
+  { path: 'add-exam-questions', component: AddExamQuestionsComponent },
+  { path: 'add-exam-questions-list', component: AddExamQuestionsListComponent },
+
 
   { path: '**', redirectTo: ''}
 ];

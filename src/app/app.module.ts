@@ -24,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuestionAnswerComponent } from './student/question-answer/question-answer.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
+import { AddExamComponent } from './teacher/add-exam/add-exam.component';
+import { AddExamQuestionsComponent } from './teacher/add-exam-questions/add-exam-questions.component';
+import { AddExamQuestionsListComponent } from './teacher/add-exam-questions-list/add-exam-questions-list.component';
  
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { CommonModule } from '@angular/common';
     JoinExamComponent,
     JoinExamPasswordComponent,
     QuestionAnswerComponent,
+    AddExamComponent,
+    AddExamQuestionsComponent,
+    AddExamQuestionsListComponent,
   ],
   imports: [
     BrowserModule,
