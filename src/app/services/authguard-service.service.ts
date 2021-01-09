@@ -9,9 +9,20 @@ import { User } from '../model/user';
 export class AuthguardServiceService {
 
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private isTeacher: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private isStudent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
+  }
+
+  get isStudentRole() {
+    return this.isStudent.asObservable();
+  }
+
+  get isTeacherRole() {
+    return this.isTeacher.asObservable();
   }
 
   constructor(
@@ -20,19 +31,21 @@ export class AuthguardServiceService {
 
   login(user: User) {
     if (user.userName !== '' && user.password !== '') {
-      this.loggedIn.next(true);
+
       if (user.userName === 'student' && user.password === 'student') {
         localStorage.setItem('studentid', '35');
-        localStorage.setItem('role', 'student');
-        localStorage.setItem('loggedIn', 'true');
-        console.log('login service');
+        this.loggedIn.next(true);
+        this.isStudent.next(true);
+        this.isTeacher.next(false);
+        console.log('login student');
       }
 
       if (user.userName === 'teacher' && user.password === 'teacher') {
         localStorage.setItem('teacherid', '85');
-        localStorage.setItem('role', 'teacher');
-        localStorage.setItem('loggedIn', 'true');
-        console.log('login service');
+        this.loggedIn.next(true);
+        this.isTeacher.next(true);
+        this.isStudent.next(false);
+        console.log('login teacher');
       }
 
       this.router.navigate(['/']);
