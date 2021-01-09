@@ -36,10 +36,10 @@ export class ExamService {
       studentid: studentId
     };
 
-    let _missionAnnouncedSource: Exam = new Exam();
-    return of(_missionAnnouncedSource);
+    // let _missionAnnouncedSource: Exam = new Exam();
+    // return of(_missionAnnouncedSource);
 
-    // return this.http.post<Exam>('https://localhost:44390/api/exam/joinexam', JSON.stringify(body), httpOptions);
+    return this.http.post<Exam>(AppSettings.API_ENDPOINT + '/joinexam', JSON.stringify(body), httpOptions);
   }
 
 
@@ -51,15 +51,13 @@ export class ExamService {
       studentid: studentId
     };
 
-    let _missionAnnouncedSource: Exam = new Exam();
-    return of(_missionAnnouncedSource);
+    // let _missionAnnouncedSource: Exam = new Exam();
+    // return of(_missionAnnouncedSource);
 
-    // return this.http.post<Exam>('https://localhost:44390/api/exam/startexam', JSON.stringify(body), httpOptions);
+    return this.http.post<Exam>(AppSettings.API_ENDPOINT + '/startexam', JSON.stringify(body), httpOptions);
   }
 
-  private _jsonURL = '../jsondata/question.json';
-
   getExamQuestions(examId: string): Observable<any[]> {
-     return this.http.get<Questions[]>('https://localhost:44390/api/exam/question/1');
+    return this.http.get<Questions[]>(AppSettings.API_ENDPOINT + '/question/1');
   }
 }
